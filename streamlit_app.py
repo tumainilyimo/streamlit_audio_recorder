@@ -5,7 +5,12 @@ import numpy as np
 import streamlit as st
 from io import BytesIO
 import streamlit.components.v1 as components
-
+import io
+import whisper
+import torch
+import ffmpeg
+import torchaudio
+import streamlit as st
 
 # DESIGN implement changes to the standard streamlit UI/UX
 st.set_page_config(page_title="streamlit_audio_recorder")
@@ -56,12 +61,7 @@ def audiorec_demo_app():
         # wav_bytes contains audio data in format to be further processed
         # display audio data as received on the Python side
         st.audio(wav_bytes, format='audio/wav')
-        import io
-        import whisper
-        import torch
-        import ffmpeg
-        import torchaudio
-        import streamlit as st
+        
         LANGUAGES = {
             "en":"english",
             "zh":"chinese",
@@ -298,6 +298,8 @@ def audiorec_demo_app():
             question = (f"**Recognized Text:** {text}")
 
             st.write("Codebot:" ,chat(question,start_chat_log))
+        
+        
 
 if __name__ == '__main__':
 
