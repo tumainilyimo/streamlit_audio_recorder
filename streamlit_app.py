@@ -269,7 +269,7 @@ def audiorec_demo_app():
                 return chat_log
 
             if __name__ == "__main__":
-                ai.api_key = "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"
+                ai.api_key = ""
 
                 completion = ai.Completion()
 
