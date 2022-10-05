@@ -302,4 +302,4 @@ def main():
 if __name__ == '__main__':
 
     # call main function
-    audiorec_demo_app()
+    main()
